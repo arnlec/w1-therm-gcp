@@ -1,0 +1,4 @@
+device_id: sensor_temp_0001
+timer: 5
+gcp:
+  precision: 5

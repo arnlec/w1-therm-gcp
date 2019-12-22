@@ -1,0 +1,23 @@
+language: python
+cache: pip
+
+python:
+  - "3.8"
+  
+install:
+  - pip install -r requirements.txt
+  
+script:
+  - python setup.py test
+  - python setup.py bdist_wheel
+  
+deploy:
+  provider: releases
+  api_key: 
+    secure: EJu5OwUrKFsNp56pFkAp86//NglJD1n3zGrztsF0DDedp5xQJMzG8B6BPvGiOhysGn5SQt7cDwMEsg0dDyRh+kdmkDGHf8ucPVjVd7UmiUv1SnMZZ/6Taixm5HgGCAmGM0oZIrQScYpzIXm+riBuBsf6qYMWy7d120LZL8Yv1JcjTEnY1Zog2HfrizWvXbPnHCwfXSpREQJBmwfQPk921KrN4VaosKPPVwqOJlv0fTcwkdVY0opCDy4kCzvB1ebdCYbXs3edG4JGO2EE1KBrFsk/Ws8W/e9RXdouQRC+ulN5DfjFTziJPU0hlDU4a1pv50SA1zTkHPlaTHIvGTvPNMqNues6e59fTTpoCoRfE2f3w2dDD9S4qu2kqJW9BsPReeatuSMcITVcpNdDQ6p4ygC/2B1bumlI9EHSJCQpYkQi9ToHb2WVepsUgTpyf6I2PlpZhQoWslCH/53IcEUGB1Y5WMMhI6PTAvdhp4uUSNMzuzEK4FPS1OFr1EKcYMPqWG8ouExO0NxoLrRVlXiKvGysi316xbC69vmYRjK3qohZoB9Sc8rSKZ4hFYriQVdDscU0Z6taMLIxl/1U/CduYWILsu40k4Dc7UcmQdUm/Uw14aY5kdTmligTGqwcQzirs71ogmd+fnJ8irBGnYR7G2WMvPymXC58L/5veQcr6Zo=
+  file: dist/*
+  skip_cleanup: true
+  overwrite: true
+  edge: true
+  on:
+    tags: true

@@ -1,0 +1,5 @@
+exclude .gitignore
+exclude .travis.yml
+exclude main.py
+exclude requirements.txt
+exclude setenv.sh
