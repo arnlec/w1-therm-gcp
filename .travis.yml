@@ -1,20 +1,16 @@
 language: python
 cache: pip
-
 python:
-  - "3.8"
-  
+- '3.8'
 install:
-  - pip install -r requirements.txt
-  
+- pip install -r requirements.txt
 script:
-  - python setup.py test
-  - python setup.py bdist_wheel
-  
+- python setup.py test
+- python setup.py bdist_wheel
 deploy:
   provider: releases
-  api_key: 
-    secure: EJu5OwUrKFsNp56pFkAp86//NglJD1n3zGrztsF0DDedp5xQJMzG8B6BPvGiOhysGn5SQt7cDwMEsg0dDyRh+kdmkDGHf8ucPVjVd7UmiUv1SnMZZ/6Taixm5HgGCAmGM0oZIrQScYpzIXm+riBuBsf6qYMWy7d120LZL8Yv1JcjTEnY1Zog2HfrizWvXbPnHCwfXSpREQJBmwfQPk921KrN4VaosKPPVwqOJlv0fTcwkdVY0opCDy4kCzvB1ebdCYbXs3edG4JGO2EE1KBrFsk/Ws8W/e9RXdouQRC+ulN5DfjFTziJPU0hlDU4a1pv50SA1zTkHPlaTHIvGTvPNMqNues6e59fTTpoCoRfE2f3w2dDD9S4qu2kqJW9BsPReeatuSMcITVcpNdDQ6p4ygC/2B1bumlI9EHSJCQpYkQi9ToHb2WVepsUgTpyf6I2PlpZhQoWslCH/53IcEUGB1Y5WMMhI6PTAvdhp4uUSNMzuzEK4FPS1OFr1EKcYMPqWG8ouExO0NxoLrRVlXiKvGysi316xbC69vmYRjK3qohZoB9Sc8rSKZ4hFYriQVdDscU0Z6taMLIxl/1U/CduYWILsu40k4Dc7UcmQdUm/Uw14aY5kdTmligTGqwcQzirs71ogmd+fnJ8irBGnYR7G2WMvPymXC58L/5veQcr6Zo=
+  api_key:
+    secure: dFUB5dIJCnZJp5aTD/8s4W24pgirlwnJBqKUrKh1ff8n1qpVyoA4pu8FP9bXlGBfMEwSDp65RXQS7wPsRCW7OxxQsG1CyT7AzUTaWoQkB4dbXpCQZ+/Wfd84qGaACFbL1WNc373dwAqKYBfPqwT4qGIsrnlyLHJJaMUFhlC4EvKA54fl6x+gwabq68Wqa0+AjxKX5yrfWdFutRufNzS1LZYWU0vcB2pSO0+Sivh7PVcAe/rflG+GLHevKRJpGP1/SzClWjfTWJlXM62q25bX4jwm/xWtEDer2FNl0FL7M7rjdWEDxVnIQh+BvTNeKWO4vQiMkP21tQiEfSb/JIwp7uCa1NRUwRb11SRWRHSVP+AZeC9AYXwhGUeBFt0QXKO998ax1lkHxwLATn/t8I+ZXLXqcl38URBkT4aPn1TuVqIvQKFPQfh5BFuOl7FfZ6c5uUhLnnwcciAZCZNRCbcTDHzAPWwrVcfw67VaHwgMpDb9GZMC+z779ZesmzPfckzwU6i4uYUbUz3JxqilgxdTumHLrXb0CszFijoH3Q9/WkMENkRAXZYIXzS3ypMOvHjLERTCYPKqyMd29Em1ESIHrQxGTp/7ygh5bNErcxwPxmJ47lbJ18KAPcxbjkzE1eWH5tzRouHRVCJFAZ9mGnox9sfTec8/OF9InYO3jqaCFCM=
   file: dist/*
   skip_cleanup: true
   overwrite: true
