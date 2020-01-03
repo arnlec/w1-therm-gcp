@@ -2,11 +2,16 @@ language: python
 cache: pip
 python:
 - '3.8'
+env:
+  global:
+    secure: UhvIKnvPjoqY0qXTUttvKUQXHTVHKlCif92ti+vhj4uUrYVRgr6OWOczO+frKo6UFGNbqIwKlfT9rPJQHvHsi6bU3PI0+cw4REIXI8t0izqjHWpVbBFEcbtEc6VMiXGMUuLRMVT8Q5vvNOC/cO+cnOaFceFBLSRkhcRxU/EqTfI2tzJgKrezc6HR7/AFI1OqlCWkla5gIGVJRCu0G/3Qrt292H1r657feXWZcxJkqQKpXyT1gjYSN8VZyjynMzYL0eV/OltCNyphGg7EI8P+2+jC2Myh3T+pILZ/R8orOmiodTlqdeAwEmNC76T3eot54VvMbeK4Af34LZzQNqJSC1slgRaDaqZmZpndW2ilzItaY5JDuSqbbG4SCGKVlTtjQiTaB0nMxJOuysBP6DRhpkSW87lRgKq7F8uSayk1cbtvlCkip2cqlS3k93THfrad0IQ+8n3S/aMRIbhqPjqLs3fa2dEjiMeNCMpOiPPevLzAT5gA9kMZ8fue8FB01X+oUdHy0oZx5ZK5xy2iNldSTca1god5anCmeSybawKvIyy2bjkBN5ouVqevYZaqxBLBm6CSTyM2Icp02NkHH7VH1psCCLZL6tn0YaqqZrpc0Bf8kDIpLGrurHqzSBpwzWcPAq2Kv+kePE+/FcBzFwCHloueaeWfJDqYYPwNAB6Z++E=
+before_install:
+  - openssl aes-256-cbc -k "$key_secret_password" -in w1-therm-dev.enc -out w1-therm-dev.key -d
 install:
-- pip install -r requirements.txt
+  - pip install -r requirements.txt
 script:
-- python setup.py test
-- python setup.py bdist_wheel
+  - python setup.py test
+  - python setup.py bdist_wheel
 deploy:
   provider: releases
   api_key:

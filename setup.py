@@ -18,7 +18,12 @@ setuptools.setup(
     url="https://github.com/arnlec/w1-therm-mqtt",
     license="GPLv3",
     packages=setuptools.find_packages(),
-    install_requires=['w1thermsensor==1.1.2','PyYAML==5.2'],
+    install_requires=[
+        'w1thermsensor==1.1.2',
+        'PyYAML==5.2',
+        'pyjwt==1.7.1',
+        'paho-mqtt==1.4.0'
+        ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",

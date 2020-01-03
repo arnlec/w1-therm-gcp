@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sys, getopt
 import logging
-from w1_therm_gcp import W1ThermGCP
+from w1_therm_gcp.w1 import W1ThermGCP
 
 log_levels = {
     'CRITICAL' : logging.CRITICAL,
