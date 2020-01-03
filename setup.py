@@ -6,7 +6,7 @@ with open("./readme.md", "r") as fh:
 
 setuptools.setup(
     use_scm_version={"root": ".", "relative_to": __file__},
-    scripts=['w1_therm_gcp.py'],
+    scripts=['w1_therm_app.py'],
     test_suite = 'tests',
     setup_requires=['setuptools_scm'],
     name="w1_therm_gcp",
@@ -22,7 +22,8 @@ setuptools.setup(
         'w1thermsensor==1.1.2',
         'PyYAML==5.2',
         'pyjwt==1.7.1',
-        'paho-mqtt==1.4.0'
+        'paho-mqtt==1.4.0',
+        'cryptography==2.7'
         ],
     classifiers=[
         "Programming Language :: Python :: 3",
