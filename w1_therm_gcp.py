@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#! /usr/bin/env python
 import sys, getopt
 import logging
 from w1_therm_gcp.w1 import W1ThermGCP
