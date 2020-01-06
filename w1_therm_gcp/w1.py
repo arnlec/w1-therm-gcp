@@ -24,4 +24,4 @@ class W1ThermGCP:
     def readTemperature(self):
         temp = self.sensor.get_temperature()
         logging.debug("readTemperature %s" % temp)
-        self.gcp.publish("{'value':'%s'}" % temp)
+        self.gcp.publish("{'temperature':'%s'}" % temp,'state')

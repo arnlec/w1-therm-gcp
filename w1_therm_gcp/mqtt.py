@@ -102,14 +102,14 @@ class GCPClient:
         client.loop_start()
         self.wait_for_connection(self.configuration['mqtt']['mqtt_connection_timeout'])
 
-    def publish(self,value):      
+    def publish(self,value,type='events'):      
         logging.debug("send %s to gcp" % value)
         if self.current == None:
             self.connect()
         if self.is_connected == False:
             self.current.reconnect()
         result = self.current.publish(
-            topic="/devices/%s/events" % self.configuration['mqtt']['device_id'],
+            topic="/devices/{}/{}".format(self.configuration['mqtt']['device_id'],type),
             payload=value,
             qos=0) 
         result.wait_for_publish()
