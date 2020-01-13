@@ -1,6 +1,7 @@
 import logging
 import time
 from w1thermsensor import W1ThermSensor
+import json
 
 from .mqtt import GCPClient
 from .configuration import factory as configuration_factory
@@ -24,4 +25,5 @@ class W1ThermGCP:
     def readTemperature(self):
         temp = self.sensor.get_temperature()
         logging.debug("readTemperature %s" % temp)
-        self.gcp.publish("{'temperature':'%s'}" % temp,'state')
+        data = {'temperature':temp}
+        self.gcp.publish(json.dumps(data),'state')

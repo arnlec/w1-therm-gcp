@@ -3,6 +3,7 @@ import logging
 from w1_therm_gcp.mqtt import GCPClient
 import jwt
 import time
+import json
 
 class TestGcpClient(unittest.TestCase):
 
@@ -34,9 +35,15 @@ class TestGcpClient(unittest.TestCase):
         client.connect()
         self.assertTrue(client.is_connected())
     
-    def test_publish(self):
+    def test_publish_events(self):
         client = GCPClient(self.configuration)
         result = client.publish("{'value':'21500'}")
+        client.disconnect()
+        self.assertTrue(result)
+    
+    def test_publish_state(self):
+        client = GCPClient(self.configuration)
+        result = client.publish(json.dumps({'temperature':'20.5'}),'state')
         client.disconnect()
         self.assertTrue(result)
         
