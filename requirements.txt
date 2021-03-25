@@ -1,2 +1,2 @@
 w1thermsensor==1.1.2
-PyYAML==5.2
+PyYAML==5.4
